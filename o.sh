@@ -1,0 +1,15 @@
+mkdir -p generated
+mono Coco.exe -o generated -namespace Tastier Tastier.ATG
+Coco/R (Apr 19, 2011)
+checking
+  LL1 warning in Stat: "else" is start & successor of deletable structure
+parser + scanner generated
+0 errors detected
+WARNING: The runtime version supported by this application is unavailable.
+Using default runtime: v4.0.30319
+dmcs Tastier.cs CodeGen.cs SymTab.cs generated/*.cs -out:tcc.exe
+Note: dmcs is deprecated, please use mcs instead!
+Compilation succeeded - 1 warning(s)
+rm -f TastierProject.s
+mono tcc.exe TastierProgram.TAS > Tastier.s
+Makefile:9: recipe for target 'compile' failed

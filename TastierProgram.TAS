@@ -1,0 +1,15 @@
+program Test {
+   const int MYCONST := 10;
+
+   void main() {
+      int sum;
+      write "The constant value MYCONST is ";
+      writeln MYCONST;
+      sum := 5;
+      write "int sum equals ";
+      writeln sum;
+      write "The value of MYCONST + sum is ";
+      sum := sum + MYCONST;
+      writeln sum;
+   }
+}

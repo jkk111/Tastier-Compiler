@@ -1,0 +1,64 @@
+// program to read integer values n (n > 0) from the console
+// and, for each one, print the sum of the values from 1 to n
+
+program Test {
+
+   int i;
+   const int MYNUM := 3;
+   const int MYCONST := 10;
+   const bool MYBOOL := false;
+   const int COMB := MYNUM + 15;
+
+   void SumUp() {
+      int j, sum;
+      
+      void Subtract() {
+         i := i - 1;
+      }
+      
+      void Add() {
+         if i > 0 {
+            sum := sum + i; 
+            Subtract();
+            Add();
+         }
+      }
+      
+      j := i;
+      sum := 0;
+      Add();
+      write "The sum of the values from 1 to ";
+      write j; write " is ";
+      writeln sum;
+   }
+
+   void mulByConst() {
+      int i;
+      int j;
+      int k;
+      i := 1;
+      j := 2;
+      k := 4;
+      write "IN > "; write i;
+      write " OUT > "; writeln i * MYCONST;
+      write "i "; writeln i;
+      write "j "; writeln j;
+      write "k "; writeln k;
+      write "MYCONST "; writeln MYCONST;
+      write "COMB "; writeln COMB;
+   }
+
+   void main() {
+      writeln MYNUM;
+      writeln MYBOOL;
+      writeln COMB;
+      write "Enter value for i (or 0 to stop): ";
+      read i;
+      while i > 0 {
+         mulByConst();
+         SumUp();
+         write "Enter value for i (or 0 to stop): ";
+         read i;
+      }
+   }
+}
